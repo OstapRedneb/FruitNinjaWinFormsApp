@@ -77,6 +77,9 @@
             Controls.Add(finishButton);
             Name = "GameForm";
             Text = "GameForm";
+            MouseDown += GameForm_MouseDown;
+            MouseMove += GameForm_MouseMove;
+            MouseUp += GameForm_MouseUp;
             ResumeLayout(false);
             PerformLayout();
         }
