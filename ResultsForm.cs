@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _2048ClassLibrary;
+using FruitNinjaWinFormsApp;
 
 namespace FruitNinjaWinFormsApp
 {
@@ -15,6 +17,16 @@ namespace FruitNinjaWinFormsApp
         public ResultsForm()
         {
             InitializeComponent();
+            List<User> users = FileWorker.GetUsersList();
+            users.Sort();
+            users.Reverse();
+            resultsLabel.Text = string.Join("\n", users);
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            new MenuForm().Show();
+            Close();
         }
     }
 }
