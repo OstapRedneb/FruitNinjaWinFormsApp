@@ -10,19 +10,19 @@ namespace FruitNinjaWinFormsApp
         private void startButton_Click(object sender, EventArgs e)
         {
             new UserForm().Show();
-            Close();
+            Hide();
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
             new SettingsForm().Show();
-            Close();
+            Hide();
         }
 
         private void resultsButton_Click(object sender, EventArgs e)
         {
             new ResultsForm().Show();
-            Close();
+            Hide();
         }
 
         private void exitButton_Click(object sender, EventArgs e)

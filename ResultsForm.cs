@@ -26,7 +26,7 @@ namespace FruitNinjaWinFormsApp
         private void backButton_Click(object sender, EventArgs e)
         {
             new MenuForm().Show();
-            Close();
+            Hide();
         }
     }
 }

@@ -16,5 +16,12 @@ namespace FruitNinjaWinFormsApp
         {
             InitializeComponent();
         }
+
+        private void beginButton_Click(object sender, EventArgs e)
+        {
+            // Пропиши логику имени
+            new GameForm().Show();
+            Hide();
+        }
     }
 }

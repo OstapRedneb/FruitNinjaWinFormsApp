@@ -22,9 +22,18 @@ namespace FruitNinjaWinFormsApp
         {
             switch (e.NewValue) // Добавь потом логику
             {
-                case < 33: break;
-                case > 33 and < 66: break;
-                case < 66: break;
+                case < 33:
+                    dificultLabel.Text = "Легко";
+                    dificultLabel.ForeColor = Color.Green;
+                    break;
+                case > 33 and < 66:
+                    dificultLabel.Text = "Средне";
+                    dificultLabel.ForeColor = Color.Yellow;
+                    break;
+                case > 66:
+                    dificultLabel.Text = "Сложно";
+                    dificultLabel.ForeColor = Color.Red;
+                    break;
 
             }
         }
@@ -39,7 +48,7 @@ namespace FruitNinjaWinFormsApp
         private void backButton_Click(object sender, EventArgs e)
         {
             new MenuForm().Show();
-            Close();
+            Hide();
         }
     }
 }
