@@ -20,17 +20,20 @@ namespace FruitNinjaWinFormsApp
 
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            switch (e.NewValue) // Добавь потом логику
+            switch (e.NewValue)
             {
                 case < 33:
+                    GameForm.difficult = Difficult.Easy;
                     dificultLabel.Text = "Легко";
                     dificultLabel.ForeColor = Color.Green;
                     break;
                 case > 33 and < 66:
+                    GameForm.difficult = Difficult.Middle;
                     dificultLabel.Text = "Средне";
                     dificultLabel.ForeColor = Color.Yellow;
                     break;
                 case > 66:
+                    GameForm.difficult = Difficult.Hard;
                     dificultLabel.Text = "Сложно";
                     dificultLabel.ForeColor = Color.Red;
                     break;

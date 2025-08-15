@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _2048ClassLibrary;
 
 namespace FruitNinjaWinFormsApp
 {
@@ -19,7 +20,7 @@ namespace FruitNinjaWinFormsApp
 
         private void beginButton_Click(object sender, EventArgs e)
         {
-            // Пропиши логику имени
+            GameForm.user = new User(textBox1.Text);
             new GameForm().Show();
             Hide();
         }
