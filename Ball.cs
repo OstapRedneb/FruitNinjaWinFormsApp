@@ -15,7 +15,7 @@ namespace FruitNinjaWinFormsApp
         public static Pen formPen;
         public static Brush formBrush;
 
-        public Timer timer;
+        public Timer timer = new Timer();
         public Brush brush;
         public RectangleF rect;
 
@@ -23,10 +23,10 @@ namespace FruitNinjaWinFormsApp
         protected float x;
         protected float y;
         
-        protected float centerX => x + radius;
-        protected float centerY => y + radius;
+        public float centerX => x + radius;
+        public float centerY => y + radius;
         
-        protected float radius;
+        public float radius;
         protected float size;
         
         protected float Vx;
@@ -58,30 +58,35 @@ namespace FruitNinjaWinFormsApp
             brush = new SolidBrush(color);
             rect = new RectangleF(x, y, size, size);
 
+            timer.Interval = 50;
             timer.Tick += MoveNext;
+
+            timer.Start();
         }
 
         public void Show() 
         {
-            graphics.FillEllipse(brush, rect);
-            graphics.DrawEllipse(pen, rect);
+            graphics.FillEllipse(brush, rect with { X = x, Y = y });
+            graphics.DrawEllipse(pen, rect with { X = x, Y = y });
         }
         public void Clear() 
         {
-            graphics.FillEllipse(formBrush, rect);
-            graphics.DrawEllipse(formPen, rect);
+            graphics.FillEllipse(formBrush, rect with {X = x, Y = y });
+            graphics.DrawEllipse(formPen, rect with{X = x, Y = y});
         }
-        public virtual void Go() 
+        public void Go() 
         {
             x += Vx;
             y += Vy;
         }
         public virtual void MoveNext(object sender, EventArgs e) 
         {
+            Clear();
             Vy += g;
             Go();
             if (y > form.ClientSize.Height + 100)
                 timer.Stop();
+            Show();
         }
     }
 }

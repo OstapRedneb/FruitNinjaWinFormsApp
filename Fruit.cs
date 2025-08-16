@@ -10,12 +10,24 @@ namespace FruitNinjaWinFormsApp
     public class Fruit : Ball
     {
         public static Action ChangeScore;
+        public static Action ChangeScoreNegative;
+
         public Color color;
         public Fruit(float x, float y, float size, float vx, float vy, float g, Color color) : base(x, y, size, vx, vy, g, color)
         {
             this.color = color;
+            timer.Start();
         }
 
+        public override void MoveNext(object sender, EventArgs e)
+        {
+            if (y > form.ClientSize.Height)
+            {
+                ChangeScoreNegative?.Invoke();
+                timer.Stop();
+            }
+            base.MoveNext(sender, e);
+        }
         public void Destroy()
         {
             Clear();

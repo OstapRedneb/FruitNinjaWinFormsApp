@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             finishButton = new Button();
             showLabel = new Label();
             scoreLabel = new Label();
+            timer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // finishButton
@@ -89,5 +91,6 @@
         private Button finishButton;
         private Label showLabel;
         private Label scoreLabel;
+        private System.Windows.Forms.Timer timer;
     }
 }
