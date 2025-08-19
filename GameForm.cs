@@ -39,16 +39,16 @@ namespace FruitNinjaWinFormsApp
         {
             InitializeComponent();
 
-            // Включить двойную буферизацию для плавной анимации
-            this.DoubleBuffered = true;
+            //// Включить двойную буферизацию для плавной анимации
+            //this.DoubleBuffered = true;
 
-            // Для обработки событий мыши за пределами формы
-            this.Capture = true;
+            //// Для обработки событий мыши за пределами формы
+            //this.Capture = true;
 
             graphics = CreateGraphics();
             sliceGraphics = CreateGraphics();
             paintSlice = new PaintEventArgs(sliceGraphics, new Rectangle());
-
+            
             Ball.graphics = graphics;
             Ball.pen = new Pen(Color.Black);
             Ball.formPen = new Pen(BackColor);
