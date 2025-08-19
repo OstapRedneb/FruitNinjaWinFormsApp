@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\2048ClassLibrary\2048ClassLibrary.csproj" />
+    <ProjectReference Include="..\PhysicsBallWinFormsLibrary\PhysicsBallWinFormsLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>
